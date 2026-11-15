@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Inventario | Kéfi Studio</title><link rel="stylesheet" href="styles.css"><script src="script.js" defer></script></head>
+<body>
+<header><p class="marca">KÉFI STUDIO</p><h1>Inventario de productos</h1><p>Organiza los materiales que dan vida a cada celebración.</p></header>
+<main>
+<section class="resumen" aria-label="Resumen de productos visibles">
+<article><span>Productos</span><strong id="total-productos">0</strong></article>
+<article><span>Unidades</span><strong id="total-unidades">0</strong></article>
+<article><span>Valor del inventario</span><strong id="valor-total">$0.00</strong></article>
+<article><span>Agotados</span><strong id="total-agotados">0</strong></article>
+</section>
+<section class="panel"><h2>Agregar producto</h2><p>Completa los datos para registrarlo en el inventario.</p>
+<form id="formulario-producto" novalidate>
+<div><label for="nombre">Nombre</label><input id="nombre" name="nombre" placeholder="Ej. Florero de vidrio" required></div>
+<div><label for="categoria">Categoría</label><input id="categoria" name="categoria" placeholder="Ej. Decoración" required></div>
+<div><label for="cantidad">Cantidad</label><input id="cantidad" name="cantidad" type="number" min="1" step="1" required></div>
+<div><label for="precio">Precio unitario ($)</label><input id="precio" name="precio" type="number" min="0" step="0.01" required></div>
+<button type="submit">Agregar producto</button>
+</form><p id="mensaje-error" role="alert" hidden></p></section>
+<section class="panel"><div class="cabecera-tabla"><div><h2>Productos registrados</h2><p>El resumen corresponde a los productos visibles.</p></div><div><label for="filtro-categoria">Filtrar por categoría</label><select id="filtro-categoria"><option value="todas">Todas las categorías</option></select></div></div>
+<div class="tabla-contenedor"><table><caption class="solo-lectores">Inventario de materiales de Kéfi Studio</caption><thead><tr><th scope="col">Nombre</th><th scope="col">Categoría</th><th scope="col">Cantidad</th><th scope="col">Precio</th><th scope="col">Subtotal</th><th scope="col">Estado</th><th scope="col">Acciones</th></tr></thead><tbody id="cuerpo-inventario"></tbody></table></div>
+<p id="mensaje-vacio" hidden>No hay productos para esta categoría.</p>
+</section>
+</main><footer>Práctica de JavaScript · Módulo 7</footer>
+</body></html>
